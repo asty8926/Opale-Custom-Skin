@@ -1,0 +1,168 @@
+/*	Extension MS	*/
+div#scDepotStack {
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  color: #ffffff;
+  z-index:99999;
+}
+div#scDepotStack a{
+  color: white;
+  text-decoration:none;
+}
+div#scDepotStack a:hover{
+  text-decoration:underline;
+}
+
+::selection {
+	background-color: var(--accent);
+	color: white;
+}
+
+a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus+label:before, [type="checkbox"]:not(:checked):focus+label:before {
+	outline: unset;
+	border: unset;
+	transition: unset;
+}
+
+.default #tools .lbl {
+	padding-top: 0.65em;
+}
+
+.sel_yes.type_b  {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+	padding-block: calc(var(--menu-items-gap) - .5em);
+}
+
+.anc_yes:not(.module) {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+}
+
+.default #footer {
+	display: none;
+}
+
+.default #main {
+	background: none;
+}
+
+.home #root {
+	/*background: linear-gradient(to top,var(--focus-bg), var(--accent));*/
+	background: white;
+}
+
+.home #navigation a {
+	--fs: 1.2em;
+	font-size: var(--fs);
+	line-height: var(--fs);
+
+	--base-pad-right: 50px;
+	--base-pad-left: 10px;
+
+	background: var(--accent);
+	border-radius: var(--rounded-corners);
+	padding: 0.2em 0.7em;
+
+	box-shadow: 1em solid;
+}
+
+.home #navigation a:hover {
+	opacity: 1;
+	background: var(--accent-darker);
+	transform: scale(1.025);
+	/*box-shadow: 0 0 0.5em var(--accent-darker);*/
+	transition: transform .1s linear, box-shadow .1s linear, background .5s linear;
+}
+
+.home #navigation a span {
+	user-select: none;
+}
+
+.home #main {
+	flex: 0 1 auto;
+	gap: 1.5em;
+	align-items: center;
+}
+
+.home section.article {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+	padding-inline: 2em;
+
+}
+
+.home section.article h1 {
+	color: var(--lighter-text-color);
+}
+
+.default .scroller, .sco .scroller {
+	left: var(--menu-items-gap);
+}
+
+.sw_child_navList>li {
+	padding-bottom: var(--menu-items-gap);
+}
+
+.sw_child_navList {
+	margin: 0;
+	background-image: none;
+	padding: 0;
+	font-size: 1.2em;
+}
+
+/* Selected item in menu (clicked), currently active */
+.default #menu .mnu .sel_yes>.lbl .item, .default #content ul.plan .sel_yes>span {
+	font-weight: 700;
+	padding-block: 0.4em;
+
+	background-color: var(--accent);
+	color: #eee;
+	border-radius: var(--rounded-corners);
+}
+
+/* Removes the default grey background when active item in menu */
+.default #menu .mnu .sel_yes>.lbl .item span, .default #content ul.plan .sel_yes>span {
+	background: none;
+}
+
+.default #menu .mnu .lbl, .default #content ul.plan .lbl {
+	padding-left: 2em;
+	padding-block: 0.4em;
+  border-radius: var(--rounded-corners);
+}
+
+.default #menu .mnu .lbl:hover, .default #content ul.plan .lbl:hover {
+	font-weight: 700;
+	color: white;
+}
+
+.default #menu .mnu .item:hover, .default #content ul.plan .item:hover {
+	background-color: var(--accent);
+	border-radius: var(--rounded-corners);
+}
+
+
+
+.default #menu .mnu .tgle_c, .default #menu .mnu .tgle_o {
+	top: 9px;
+	left: 5px;
+	background: url(../img/tpl/menu-toggle-chevron.svg) no-repeat top;
+	background-size: auto;
+	/*background-size: 18px;*/
+	/*background-position: 0 0;*/
+}
+
+.default #menu .mnu .tgle_c {
+	background-position: 0 0;
+}
+
+.default #menu .mnu .tgle_o {
+	background-position: 0 -40px;
+}
+
+/*.default .zen_true #toolbox {
+	display: ;
+}*/
+
