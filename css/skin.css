@@ -14,9 +14,60 @@ div#scDepotStack a:hover{
   text-decoration:underline;
 }
 
+/* Variables du skin */
+:root {
+/* Couleurs */
+	--menu-bg: hsla(180, 24%, 90%);
+	--text-color: hsla(0, 0%, 24%);
+	--lighter-text-color: hsla(0, 0%, 20%, 1);
+	--focus-bg: hsla(206, 28%, 95%);
+	--accent: hsla(199, 97%, 46%);
+	--accent-lower-opacity: hsla(199, 97%, 46%);
+	--accent-darker: hsla(199, 97%, 45%);
+
+/* Spacing */
+ --menu-items-gap: 1em;
+
+/* Autre */
+	--rounded-corners: .3em;
+}
+
+
 ::selection {
 	background-color: var(--accent);
 	color: white;
+}
+
+/* Fonts imports */
+/* Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Red Hat Display */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+	font: 0.9em "Inter", "Open Sans", sans-serif;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--accent);
+	opacity: 3;
+	border-radius: 10px;
+}
+
+p {
+	margin: 0.9em 0;
 }
 
 a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus+label:before, [type="checkbox"]:not(:checked):focus+label:before {
@@ -26,7 +77,9 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 }
 
 .default #tools .lbl {
-	padding-top: 0.65em;
+	--pad: 0.7em;
+	padding-top: var(--pad);
+	padding-left: var(--pad);
 }
 
 .sel_yes.type_b  {
@@ -65,7 +118,8 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 	border-radius: var(--rounded-corners);
 	padding: 0.2em 0.7em;
 
-	box-shadow: 1em solid;
+	transition: transform .1s linear, box-shadow .1s linear, background .5s linear;
+
 }
 
 .home #navigation a:hover {
@@ -73,7 +127,7 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 	background: var(--accent-darker);
 	transform: scale(1.025);
 	/*box-shadow: 0 0 0.5em var(--accent-darker);*/
-	transition: transform .1s linear, box-shadow .1s linear, background .5s linear;
+	
 }
 
 .home #navigation a span {
@@ -118,7 +172,7 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 	padding-block: 0.4em;
 
 	background-color: var(--accent);
-	color: #eee;
+	color: white;
 	border-radius: var(--rounded-corners);
 }
 
@@ -129,7 +183,7 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 
 .default #menu .mnu .lbl, .default #content ul.plan .lbl {
 	padding-left: 2em;
-	padding-block: 0.4em;
+	/*padding-block: 0.4em;*/
   border-radius: var(--rounded-corners);
 }
 
@@ -166,3 +220,82 @@ a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus
 	display: ;
 }*/
 
+.default #header,
+.sco #header {
+	background: var(--accent);
+}
+
+.default #menu>ul.mnu {
+  margin-top: var(--menu-items-gap);
+}
+
+/* Remove the top right icon next to item titles in main as the ::before */
+.module .hBk>h2.hBk_ti:before, .sco .mainContent>h2.mainContent_ti:before {
+	display: none;
+}
+
+section>.hBk_ti, .sco section>.mainContent_ti {
+	background: none;
+	margin-top: .3em;
+}
+
+.cBk_ti, .pBk_ti {
+	text-align: left;
+	font-size: 1.3em;
+	margin-bottom: .5em;
+	color: var(--lighter-text-color);
+}
+
+.cBk, .pBk {
+	/*border-radius: var(--rounded-corners);*/
+	background-image: none;
+}
+
+.cBk_co, .pBk_co {
+	background: var(--focus-bg);
+	background-image: none;
+	/*background: none;*/
+
+	border-radius: var(--rounded-corners);
+	
+	padding-inline: 1em;
+}
+
+/* Removes the second tool icon (module) in toolbar */
+.default #tools li.anc_yes.module {
+	display: none;
+}
+
+.default #tools .item {
+	background: url(../img/tpl/menu-tools-new.svg) no-repeat top;
+	background-size: 100%;
+
+	transition: transform .2s ease;
+}
+
+.default #tools a:hover {
+	opacity: 1;
+	transform: scale(1.05);
+	
+}
+
+.default #menu .mnu .item, .default #content ul.plan .item {
+	padding-block: 0.4em;
+ }
+
+/* Sub links as accent color */
+.sw_child_navList a {
+	color: var(--accent);
+ }
+
+ .sw_child_navList a:hover {
+ 	font-weight: bold;
+ 	/*text-decoration: none;*/
+ }
+
+ .default #navigation {
+ 	position: absolute;
+ 	
+ 	bottom: 1em;
+ 	right: 1em;
+ }
