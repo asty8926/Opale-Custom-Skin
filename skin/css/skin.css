@@ -1,0 +1,481 @@
+/*	Extension MS	*/
+div#scDepotStack {
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  color: #ffffff;
+  z-index:99999;
+}
+div#scDepotStack a{
+  color: white;
+  text-decoration:none;
+}
+div#scDepotStack a:hover{
+  text-decoration:underline;
+}
+
+/* LearnDash Inspiration Image
+https://www.learndash.com/support/wp-content/uploads/2019/09/learndash-page-builders-your-own-content-2.jpg */
+
+/* Variables du skin */
+:root {
+/* Couleurs */
+	--menu-bg: hsla(180, 24%, 90%);
+	--text-color: hsla(0, 0%, 24%);
+	--lighter-text-color: hsla(0, 0%, 20%, 1);
+	--focus-bg: hsla(206, 28%, 95%);
+	--accent: hsla(199, 97%, 46%);
+	--accent-lower-opacity: hsla(199, 97%, 46%);
+	--accent-darker: hsla(199, 97%, 44%);
+	--accent-even-darker: hsla(199, 97%, 35%, 1);
+	--accent-darkest: hsla(199, 97%, 30%, 1);
+
+/* Spacing */
+ --menu-items-gap: 1em;
+
+/* Autre */
+	--rounded-corners: .3em;
+
+	--move: -.2em;
+}
+
+
+::selection {
+	background-color: var(--accent);
+	color: white;
+}
+
+/* Fonts imports */
+/* Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Red Hat Display */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+	font: 0.9em "Inter", "Open Sans", sans-serif;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: hsla(0 0% 0% / .5);
+	border-radius: 10px;
+
+	transition: background-color .5s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(0 0% 0% / .7);
+}
+
+p {
+	margin: 0.9em 0;
+}
+
+a:focus, input:focus, video:focus, button:focus, [type="checkbox"]:checked:focus+label:before, [type="checkbox"]:not(:checked):focus+label:before {
+	outline: unset;
+	border: unset;
+	transition: unset;
+}
+
+/* Selects any <a> that has been visited */
+a:visited {
+  color: currentColor;
+}
+
+.default #tools .lbl {
+	--pad: 0.7em;
+	padding-top: var(--pad);
+	padding-left: var(--pad);
+}
+
+.sel_yes.type_b  {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+	padding-block: calc(var(--menu-items-gap) - .5em);
+}
+
+.anc_yes:not(.module) {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+}
+
+.default #footer {
+	display: none;
+}
+
+.default #main {
+	background: none;
+}
+
+.home #root {
+	/*background: linear-gradient(to top,var(--focus-bg), var(--accent));*/
+	background: white;
+}
+
+.home #navigation a {
+	--fs: 1.2em;
+	font-size: var(--fs);
+	line-height: var(--fs);
+
+	--base-pad-right: 50px;
+	--base-pad-left: 10px;
+
+	background: var(--accent);
+	border-radius: var(--rounded-corners);
+	padding: 0.2em 0.7em;
+
+	transition: transform .1s linear, box-shadow .1s linear, background .2s linear;
+
+	box-shadow: 0 .2em var(--accent-even-darker);
+}
+
+.home #navigation a:hover {
+	opacity: 1;
+	background: var(--accent-even-darker);
+	/*transform: scale(1.025);*/
+	transform: translateY(-2%);
+	/*box-shadow: 0 0 0.5em var(--accent-darker);*/
+	box-shadow: 0 .2em var(--accent);
+
+}
+
+.home #navigation a:active {
+	background: var(--accent-darkest);
+	transform: translateY(2%);
+}
+
+.home #navigation a span {
+	user-select: none;
+}
+
+.home #main {
+	flex: 0 1 auto;
+	gap: 1.5em;
+	align-items: center;
+}
+
+.home section.article {
+	background-color: var(--focus-bg);
+	border-radius: var(--rounded-corners);
+	padding-inline: 2em;
+
+}
+
+.home section.article h1 {
+	color: var(--lighter-text-color);
+}
+
+.default .scroller, .sco .scroller {
+	left: var(--menu-items-gap);
+}
+
+.sw_child_navList>li {
+	padding-bottom: var(--menu-items-gap);
+}
+
+.sw_child_navList {
+	margin: 0;
+	background-image: none;
+	padding: 0;
+	font-size: 1.2em;
+}
+
+/* Selected item in menu (clicked), currently active */
+.default #menu .mnu .sel_yes>.lbl .item, .default #content ul.plan .sel_yes>span {
+	font-weight: 700;
+	padding-block: 0.4em;
+
+	background-color: var(--accent);
+	color: white;
+	border-radius: var(--rounded-corners);
+}
+
+/* Removes the default grey background when active item in menu */
+.default #menu .mnu .sel_yes>.lbl .item span, .default #content ul.plan .sel_yes>span {
+	background: none;
+}
+
+.default #menu .mnu .lbl, .default #content ul.plan .lbl {
+	padding-left: 2em;
+	/*padding-block: 0.4em;*/
+  border-radius: var(--rounded-corners);
+}
+
+.default #menu .mnu .lbl:hover, .default #content ul.plan .lbl:hover {
+	font-weight: 700;
+	color: white;
+}
+
+.default #menu .mnu .item:hover, .default #content ul.plan .item:hover {
+	background-color: var(--accent);
+	border-radius: var(--rounded-corners);
+}
+
+
+
+.default #menu .mnu .tgle_c, .default #menu .mnu .tgle_o {
+	top: 9px;
+	left: 5px;
+	background: url(../img/tpl/menu-toggle-chevron.svg) no-repeat top;
+	background-size: auto;
+	/*background-size: 18px;*/
+	/*background-position: 0 0;*/
+}
+
+.default #menu .mnu .tgle_c {
+	background-position: 0 0;
+}
+
+.default #menu .mnu .tgle_o {
+	background-position: 0 -40px;
+}
+
+.default .zen_true #toolbox {
+	/*display: none;*/
+}
+
+.default #header,
+.sco #header {
+	background: var(--accent);
+}
+
+.default #menu>ul.mnu {
+  margin-top: var(--menu-items-gap);
+}
+
+/* Remove the top right icon next to item titles in main as the ::before */
+.module .hBk>h2.hBk_ti:before, .sco .mainContent>h2.mainContent_ti:before {
+	display: none;
+}
+
+section>.hBk_ti, .sco section>.mainContent_ti {
+	background: none;
+	margin-top: .3em;
+}
+
+.cBk_ti, .pBk_ti {
+	text-align: left;
+	font-size: 1.3em;
+	margin-bottom: .5em;
+	color: var(--lighter-text-color);
+}
+
+.cBk, .pBk {
+	/*border-radius: var(--rounded-corners);*/
+	background-image: none;
+}
+
+.cBk_co, .pBk_co {
+	background: var(--focus-bg);
+	background-image: none;
+	/*background: none;*/
+
+	border-radius: var(--rounded-corners);
+	
+	padding-inline: 1em;
+}
+
+/* Removes the second tool icon (module) in toolbar */
+.default #tools li.anc_yes.module {
+	display: none;
+}
+
+.default #tools .item {
+	background: url(../img/tpl/menu-tools-new.svg) no-repeat top;
+	background-size: 100%;
+
+	transition: transform .2s ease;
+}
+
+.default #tools a:hover {
+	opacity: 1;
+	transform: scale(1.05);
+	
+}
+
+.default #menu .mnu .item, .default #content ul.plan .item {
+	padding-block: 0.4em;
+ }
+
+/* Sub links as accent color */
+.sw_child_navList a {
+	color: var(--accent);
+ }
+
+.sw_child_navList a:hover {
+ 	font-weight: bold;
+ 	/*text-decoration: none;*/
+ }
+
+/* Icônes précédent suivant */
+.default #navigation {
+ 	/*position: absolute;*/
+ 	
+ 	/*bottom: 1em;
+ 	right: 1em;*/
+
+ 	margin: 0 auto;
+ 	/*padding-block: .5em;*/
+
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+
+ 	padding-top: unset;
+ }
+
+.default #navigation a.btnZen {
+ 	display: none;
+ }
+
+ .default #navigation a {
+ 	width: unset;
+ 	height: unset;
+ 	background: none;
+ 	padding: unset;
+ 	margin: unset;
+
+ 	display: flex;
+	flex-direction: row;
+
+	gap: .5em;
+
+	padding: .5em 2em;
+	text-decoration: none;
+
+	font-weight: 500;
+
+	border-radius: var(--rounded-corners);
+	border-radius: 50em;
+
+	background-color: var(--accent);
+
+	color: white;
+
+	justify-content:center;
+	align-items: center;
+ }
+
+.default #navigation a:hover {
+	background-color: var(--accent-darker);
+	opacity: 1;
+}
+
+.default #navigation a.btnNav {
+	transition: transform .3s ease;
+}
+
+.default #navigation a.btnNav.prev {
+	padding-left: 1.7em;
+}
+
+.default #navigation a.btnNav.next {
+	padding-right: 1.7em
+}
+
+.default #navigation a.btnNav.prev:hover {
+	transform: translateX(-.2em);
+}
+
+.default #navigation a.btnNav.next:hover {
+	transform: translateX(.2em);
+} 
+
+.default #navigation ul {
+	display: flex;
+	flex-direction: row;
+	gap: calc(var(--menu-items-gap) + .5em);
+}
+
+.default #navigation li {
+/*	display: flex;
+	flex-direction: row;*/
+	height: unset;
+}
+
+.iBk_ti {
+ 	margin-left: 0;
+ }
+
+.default #menu {
+	background-color: var(--menu-bg);
+	margin-bottom: 0;
+}
+
+/* Fixes the home button */
+.default #tools .home .item {
+	/*position: fixed;*/
+}
+
+.default #tools ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	gap: 1em;
+}
+
+.default .headingSelector {
+	position: fixed;
+}
+
+.default #tools li.hamburger-li {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+
+	--pad: 0.7em;
+  padding-top: var(--pad);
+  padding-left: var(--pad);
+}
+
+.default #tools li.hamburger-li:hover {
+	opacity: .9;
+}
+
+.default #tools div.hamburger-div {
+	/*position: fixed;*/
+	background: url(../img/tpl/new/collapse-sidebar.svg) no-repeat top;
+	width: 40px;
+	height: 40px;
+	left: 3em;
+
+	transition: transform .5s linear, filter .5s linear;
+}
+
+/*.default #toolbox {
+	transition: flex 2s ease;
+}
+
+.default #toolbox:hover {
+	flex: 0 0 0;
+}*/
+
+.default #tools div.hamburger-div.collapsed {	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.default #toolbox {
+	flex: 0 0 300px;
+	transition: flex .5s ease;
+}
+
+.default #toolbox.collapsed {
+	flex: 0 0 0;	
+}
